@@ -42,303 +42,84 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#fff;--ink:#1d1418;--muted:#7a6a71;--pink:#ff3d7f;--pink-2:#ff8fb5;--blush:#fff0f5;--line:#f4dbe4;--serif:"Fraunces",Georgia,serif;--sans:"Inter",system-ui,-apple-system,sans-serif}
+:root{--ink:#1d1418;--muted:#7a6a71;--pink:#ff3d7f;--pink-2:#ff8fb5;--blush:#fff0f5;--line:#f4dbe4;--serif:"Fraunces",Georgia,serif;--sans:"Inter",system-ui,-apple-system,sans-serif}
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:80px}
-body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-img{display:block;max-width:100%}
+body{background:#fff;color:var(--ink);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased;min-height:100svh;overflow-x:hidden}
+body::before{content:"";position:fixed;width:900px;height:900px;border-radius:50%;background:radial-gradient(circle,var(--blush),transparent 62%);top:-320px;left:-260px;z-index:-1}
 a{color:inherit}
 ::selection{background:var(--pink);color:#fff}
-.wrap{max-width:1180px;margin:0 auto}
-section{padding:clamp(64px,9vw,120px) clamp(16px,5vw,56px)}
-.eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--pink);font-weight:600;margin-bottom:14px}
-h2{font-family:var(--serif);font-weight:400;font-size:clamp(36px,5.4vw,62px);line-height:1;letter-spacing:-.02em}
-h2 em{color:var(--pink)}
-.btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14px;padding:13px 22px;border-radius:99px;text-decoration:none;transition:transform .25s,background .25s,color .25s;border:1.5px solid var(--ink)}
-.btn svg{width:15px;height:15px}
-.btn.dark{background:var(--ink);color:#fff}
-.btn.dark:hover{background:var(--pink);border-color:var(--pink)}
-.btn.ghost:hover{background:var(--ink);color:#fff}
-.btn:hover{transform:translateY(-2px)}
+main{max-width:1180px;margin:0 auto;min-height:100svh;padding:clamp(32px,6vh,64px) clamp(16px,5vw,56px);display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(36px,6vw,90px);align-items:center}
 
-.progress{position:fixed;top:0;left:0;height:3px;width:100%;background:linear-gradient(90deg,var(--pink),var(--pink-2));transform-origin:0 50%;transform:scaleX(0);z-index:60}
-nav{position:fixed;inset:0 0 auto 0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:16px clamp(16px,4vw,48px);background:rgba(255,255,255,.8);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:border-color .3s}
-nav.scrolled{border-color:var(--line)}
-.logo{font-family:var(--serif);font-size:22px;font-weight:600;text-decoration:none}
-.logo span{color:var(--pink)}
-nav ul{display:flex;gap:26px;list-style:none;font-size:14px;font-weight:500;align-items:center}
-nav ul a{text-decoration:none;color:var(--muted);transition:color .2s}
-nav ul a:hover{color:var(--pink)}
-nav .li{display:inline-flex;align-items:center;gap:6px;color:#fff!important;background:var(--ink);padding:8px 14px;border-radius:99px;transition:background .25s}
-nav .li:hover{background:var(--pink)}
-nav .li svg{width:14px;height:14px}
-@media(max-width:720px){nav ul{gap:14px;font-size:13px}nav ul .hide-m{display:none}}
-
-/* hero */
-.hero{padding:clamp(110px,14vh,150px) clamp(16px,5vw,56px) clamp(40px,6vw,70px);position:relative;overflow:hidden}
-.hero::before{content:"";position:absolute;width:1000px;height:1000px;border-radius:50%;background:radial-gradient(circle,var(--blush) 0%,transparent 62%);top:-300px;right:-300px;z-index:-1}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(30px,5vw,60px);align-items:center}
-h1{font-family:var(--serif);font-weight:400;font-size:clamp(58px,9vw,124px);line-height:.92;letter-spacing:-.03em}
+/* intro */
+.photo{width:96px;height:96px;border-radius:50%;object-fit:cover;object-position:62% 40%;border:4px solid #fff;box-shadow:0 14px 30px -14px rgba(255,61,127,.6)}
+.eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--pink);font-weight:600;margin-top:26px}
+h1{font-family:var(--serif);font-weight:400;font-size:clamp(56px,7.6vw,104px);line-height:.92;letter-spacing:-.03em;margin-top:10px}
 h1 .w{display:inline-block;white-space:nowrap}
 h1 em{color:var(--pink)}
-h1 .ch{display:inline-block;opacity:0;will-change:transform,opacity,filter;transition:color .3s}
-h1 .ch:hover{color:var(--pink)} h1 em .ch:hover{color:var(--ink)}
-.bio{margin-top:26px;font-size:clamp(16px,1.6vw,18.5px);color:#4a3d43;max-width:560px}
+h1 .ch{display:inline-block;opacity:0;will-change:transform,opacity,filter}
+.bio{margin-top:22px;font-size:17px;color:#4a3d43;max-width:470px}
 .bio b{color:var(--ink);font-weight:600}
-.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
-.facts{display:grid;grid-template-columns:repeat(4,auto);gap:clamp(18px,3vw,40px);margin-top:40px;padding-top:28px;border-top:1px solid var(--line);justify-content:start}
-.facts b{display:block;font-family:var(--serif);font-size:clamp(28px,3vw,38px);font-weight:600;color:var(--pink);line-height:1}
-.facts span{font-size:12.5px;color:var(--muted)}
-@media(max-width:560px){.facts{grid-template-columns:repeat(2,auto)}}
+.btn{display:inline-flex;align-items:center;gap:8px;margin-top:28px;font-weight:600;font-size:14px;padding:12px 20px;border-radius:99px;text-decoration:none;background:var(--ink);color:#fff;transition:background .25s,transform .25s}
+.btn:hover{background:var(--pink);transform:translateY(-2px)}
+.btn svg{width:15px;height:15px}
 
-.stage{--r:clamp(170px,19vw,250px);--w:clamp(110px,11vw,150px);perspective:1200px;height:calc(var(--w)*1.33 + 120px);position:relative}
-.ring{position:absolute;left:50%;top:60px;width:var(--w);height:calc(var(--w)*1.33);margin-left:calc(var(--w)/-2);transform-style:preserve-3d;animation:spin 34s linear infinite}
-.stage:hover .ring{animation-play-state:paused}
-@keyframes spin{from{transform:rotateX(-10deg) rotateY(0)}to{transform:rotateX(-10deg) rotateY(-360deg)}}
-.ring figure{position:absolute;inset:0;border-radius:16px;overflow:hidden;background:var(--blush);box-shadow:0 18px 40px -18px rgba(255,61,127,.45);border:4px solid #fff}
-.ring img{width:100%;height:100%;object-fit:cover}
-.badge{position:absolute;width:128px;height:128px;left:50%;top:50%;transform:translate(-50%,-50%);pointer-events:none;z-index:0}
-.badge svg{width:100%;height:100%;animation:twirl 16s linear infinite}
-.badge text{font:600 11px var(--sans);letter-spacing:.3em;fill:var(--pink);text-transform:uppercase}
-.badge .heart{position:absolute;inset:0;display:grid;place-items:center;font-size:26px;color:var(--pink)}
-@keyframes twirl{to{transform:rotate(360deg)}}
-@media(max-width:900px){.hero-grid{grid-template-columns:1fr}.stage{margin-top:10px}}
-
-.marquee{border-block:1px solid var(--line);overflow:hidden;padding:16px 0}
-.marquee div{display:flex;gap:44px;width:max-content;animation:slide 32s linear infinite;font-family:var(--serif);font-size:clamp(20px,2.6vw,30px);font-style:italic}
-.marquee span:nth-child(4n+3){color:var(--pink)}
-.marquee span:nth-child(even){color:var(--pink-2);font-style:normal}
-@keyframes slide{to{transform:translateX(-50%)}}
-
-/* accomplishments */
-.work{background:var(--blush);border-radius:clamp(0px,3vw,40px);margin:clamp(24px,4vw,48px) clamp(0px,2vw,24px) 0}
-.head-row{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-bottom:40px}
-.head-row p{color:var(--muted);max-width:360px}
-.board{display:grid;grid-template-columns:300px 1fr;gap:20px}
-.tabs{display:flex;flex-direction:column;gap:4px;list-style:none}
-.tabs button{all:unset;cursor:pointer;display:flex;align-items:center;gap:16px;padding:15px 20px;border-radius:18px;transition:background .3s,color .3s;color:var(--muted);position:relative;overflow:hidden}
-.tabs button:hover{background:rgba(255,255,255,.6);color:var(--ink)}
-.tabs button:focus-visible{outline:2px solid var(--pink)}
-.tabs button.on{background:#fff;color:var(--ink);box-shadow:0 10px 30px -18px rgba(255,61,127,.5)}
-.tabs .n{font-family:var(--serif);font-size:14px;color:var(--pink);opacity:.5;width:22px}
-.tabs button.on .n{opacity:1}
-.tabs .t{font-family:var(--serif);font-size:20px;line-height:1.1}
-.tabs .r{display:block;font-family:var(--sans);font-size:12px;color:var(--muted);margin-top:3px}
-.tabs .bar{position:absolute;left:0;bottom:0;height:2px;background:var(--pink);width:0}
-.tabs button.on .bar{animation:fill var(--dur) linear forwards}
-.board.paused .tabs button.on .bar{animation-play-state:paused}
-@keyframes fill{to{width:100%}}
-.panel{background:#fff;border-radius:28px;padding:clamp(28px,4.5vw,56px);position:relative;min-height:540px;display:grid;overflow:hidden}
-.panel::after{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(255,61,127,.10),transparent 70%);right:-140px;top:-140px;pointer-events:none}
-.pane{grid-area:1/1;display:flex;flex-direction:column;opacity:0;visibility:hidden;transform:translateY(14px);transition:opacity .5s ease,transform .6s cubic-bezier(.2,.8,.2,1),visibility .5s}
-.pane.on{opacity:1;visibility:visible;transform:none}
-.meta{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
-.pill{background:var(--blush);color:var(--pink);font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:7px 13px;border-radius:99px}
-.when{font-size:13px;color:var(--muted)}
-.pane h3{font-family:var(--serif);font-weight:400;font-size:clamp(38px,5vw,66px);line-height:.98;letter-spacing:-.02em;margin:20px 0 8px}
-.pane .role{font-size:14px;color:var(--muted);font-weight:500}
-.pane .lead{font-family:var(--serif);font-style:italic;font-size:clamp(18px,1.9vw,22px);line-height:1.4;margin-top:20px;max-width:580px}
-.pane ul{list-style:none;margin-top:24px;display:grid;gap:13px;max-width:620px}
-.pane li{display:flex;gap:14px;color:#4a3d43;font-size:15.5px}
-.pane li::before{content:"";flex:0 0 7px;height:7px;border-radius:50%;background:var(--pink);margin-top:.6em}
-.foot{margin-top:auto;padding-top:30px;display:flex;align-items:flex-end;gap:28px;flex-wrap:wrap;padding-right:120px}
-.stat2 b{display:block;font-family:var(--serif);font-weight:600;font-size:clamp(44px,5.5vw,70px);line-height:.9;background:linear-gradient(120deg,var(--pink),var(--pink-2));-webkit-background-clip:text;background-clip:text;color:transparent}
-.stat2 span{font-size:13px;color:var(--muted)}
-.controls{display:flex;gap:10px;position:absolute;right:clamp(20px,3vw,34px);bottom:clamp(20px,3vw,34px);z-index:2}
-.arrow{width:48px;height:48px;border-radius:50%;border:1.5px solid var(--line);background:#fff;cursor:pointer;display:grid;place-items:center;transition:all .25s;color:var(--ink)}
+/* catalogue */
+.book{perspective:1600px}
+.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.top span{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--pink);font-weight:600}
+.count{font-family:var(--serif);font-size:18px;color:var(--muted)}
+.count b{color:var(--ink);font-weight:400}
+.page{background:#fff;border:1px solid var(--line);border-radius:26px;padding:clamp(28px,4vw,48px);min-height:430px;display:flex;flex-direction:column;box-shadow:0 40px 80px -50px rgba(255,61,127,.55);transform-origin:left center;touch-action:pan-y;position:relative;overflow:hidden}
+.page::after{content:"";position:absolute;right:-120px;top:-120px;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(255,61,127,.1),transparent 70%)}
+.tag{align-self:flex-start;background:var(--blush);color:var(--pink);font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:7px 13px;border-radius:99px}
+.page h2{font-family:var(--serif);font-weight:400;font-size:clamp(36px,4.4vw,56px);line-height:1;letter-spacing:-.02em;margin-top:20px}
+.role{color:var(--muted);font-size:14px;margin-top:8px}
+.desc{margin-top:20px;font-size:16.5px;color:#4a3d43;max-width:540px}
+.stat{margin-top:auto;padding-top:26px;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.stat b{font-family:var(--serif);font-weight:600;font-size:clamp(44px,5vw,64px);line-height:1;background:linear-gradient(120deg,var(--pink),var(--pink-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat span{color:var(--muted);font-size:14px}
+.stat a{font-weight:600;font-size:14px;color:var(--pink);text-decoration:none}
+.stat a:hover{text-decoration:underline}
+.nav{display:flex;align-items:center;justify-content:space-between;margin-top:18px}
+.arrows{display:flex;gap:10px}
+.arrow{width:52px;height:52px;border-radius:50%;border:1.5px solid var(--line);background:#fff;cursor:pointer;display:grid;place-items:center;color:var(--ink);transition:all .25s}
 .arrow:hover{background:var(--pink);border-color:var(--pink);color:#fff}
 .arrow svg{width:20px;height:20px}
-@media(max-width:900px){
-  .board{grid-template-columns:1fr}
-  .tabs{flex-direction:row;overflow-x:auto;scrollbar-width:none;margin:0 -16px;padding:0 16px 4px;scroll-snap-type:x mandatory}
-  .tabs::-webkit-scrollbar{display:none}
-  .tabs li{flex:0 0 auto;scroll-snap-align:start}
-  .tabs button{padding:12px 16px}.tabs .r{display:none}.tabs .t{font-size:17px;white-space:nowrap}
-  .panel{min-height:0;padding-bottom:96px}.foot{padding-right:0}
-}
+.dots{display:flex;gap:7px}
+.dots button{width:9px;height:9px;border-radius:99px;border:0;background:var(--line);cursor:pointer;padding:0;transition:all .35s}
+.dots button.on{width:28px;background:var(--pink)}
+.made{grid-column:1/-1;text-align:center;font-size:11.5px;color:var(--muted);letter-spacing:.04em;opacity:.8}
 
-/* story */
-.story{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,80px);align-items:center}
-.story p{color:var(--muted);font-size:17.5px;margin-top:20px}
-.story p strong{color:var(--ink);font-weight:600}
-.quote{margin-top:28px;padding-left:20px;border-left:3px solid var(--pink);font-family:var(--serif);font-size:23px;font-style:italic;line-height:1.35}
-.collage{position:relative;aspect-ratio:1/1.05}
-.collage img{position:absolute;border-radius:22px;object-fit:cover;border:6px solid #fff;box-shadow:0 30px 60px -30px rgba(29,20,24,.35);transition:transform .5s cubic-bezier(.2,.8,.2,1)}
-.collage img:hover{transform:rotate(0) scale(1.03)!important;z-index:3}
-.collage img:nth-child(1){width:66%;height:72%;top:0;right:0;transform:rotate(3deg);object-position:62% 45%}
-.collage img:nth-child(2){width:48%;height:58%;bottom:0;left:0;transform:rotate(-4deg);object-position:50% 30%}
-@media(max-width:860px){.story{grid-template-columns:1fr}.collage{max-width:440px;width:100%;margin:0 auto}}
-
-/* moments */
-.moments{padding-top:0}
-.strip{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px clamp(16px,5vw,56px) 24px;margin:34px calc(-1*clamp(16px,5vw,56px)) 0;scrollbar-width:none;cursor:grab}
-.strip::-webkit-scrollbar{display:none}
-.strip figure{flex:0 0 clamp(220px,24vw,300px);scroll-snap-align:start}
-.strip .ph{aspect-ratio:3/4;border-radius:20px;overflow:hidden;background:var(--blush)}
-.strip img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.2,.8,.2,1)}
-.strip figure:hover img{transform:scale(1.05)}
-.strip figcaption{font-size:13.5px;color:var(--muted);margin-top:10px}
-.strip figcaption b{display:block;color:var(--ink);font-family:var(--serif);font-weight:400;font-size:18px}
-.strip-nav{display:flex;gap:10px}
-
-/* press + beyond: simple cards */
-.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:36px}
-.cards.three{grid-template-columns:repeat(3,1fr)}
-.c{display:block;background:#fff;border:1px solid var(--line);border-radius:20px;padding:26px 28px;text-decoration:none;transition:border-color .25s,transform .25s,box-shadow .25s}
-a.c:hover{border-color:var(--pink);transform:translateY(-3px);box-shadow:0 20px 40px -28px rgba(255,61,127,.55)}
-.c .k{font-size:12px;font-weight:600;color:var(--pink);letter-spacing:.08em;text-transform:uppercase}
-.c h3{font-family:var(--serif);font-weight:400;font-size:26px;line-height:1.15;margin:8px 0 6px}
-.c p{color:var(--muted);font-size:15px}
-.c .go{display:inline-block;margin-top:16px;font-weight:600;font-size:14px;color:var(--ink)}
-a.c:hover .go{color:var(--pink)}
-.interests-line{margin-top:28px;font-size:17px;color:var(--muted)}
-.interests-line b{color:var(--ink);font-weight:600}
-@media(max-width:860px){.cards,.cards.three{grid-template-columns:1fr}}
-
-footer{padding:90px 16px 46px;text-align:center;border-top:1px solid var(--line)}
-footer h2{font-size:clamp(40px,8vw,92px)}
-footer > p{color:var(--muted);margin-top:16px}
-footer .cta{justify-content:center}
-.fine{font-size:13px;margin-top:46px;color:var(--muted)}
-.made{font-size:11px;margin-top:6px;letter-spacing:.08em;color:var(--muted);opacity:.7}
-
-.reveal{opacity:0;transform:translateY(30px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)}
-.reveal.in{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:0s!important;animation-iteration-count:1!important;transition:none!important}.ring{transform:rotateX(-10deg)}}
+@media(max-width:880px){main{grid-template-columns:1fr;align-items:start;gap:40px}.page{min-height:400px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
 <body>
-<div class="progress" id="progress" aria-hidden="true"></div>
-<nav id="nav">
-  <a class="logo" href="#top">Brynn<span>.</span></a>
-  <ul>
-    <li class="hide-m"><a href="#impact">Impact</a></li>
-    <li class="hide-m"><a href="#story">Story</a></li>
-    <li><a href="#press">Press</a></li>
-    <li><a class="li" href="https://www.linkedin.com/in/brynn-forlizzi-3929aa205/" target="_blank" rel="noopener me"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C20.6 8.65 21 11.2 21 14.5V21h-4v-5.8c0-1.4-.03-3.2-1.95-3.2-1.95 0-2.25 1.5-2.25 3.1V21H9z"/></svg>LinkedIn</a></li>
-  </ul>
-</nav>
+<main>
+  <section>
+    <img class="photo" src="brynn.jpg" alt="Brynn Forlizzi" width="96" height="96">
+    <p class="eyebrow">Darien, CT</p>
+    <h1 id="name" aria-label="Brynn Forlizzi"><span class="w">Brynn</span> <em class="w">Forlizzi</em></h1>
+    <p class="bio">Two-time pediatric cancer survivor and co-founder of <b>Soothe Note</b>. Four-year student government president, varsity tennis captain, and competitive equestrian with a <b>4.2 weighted GPA</b>. Interested in policy, politics, finance, and philanthropy.</p>
+    <a class="btn" href="https://www.linkedin.com/in/brynn-forlizzi-3929aa205/" target="_blank" rel="noopener me"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C20.6 8.65 21 11.2 21 14.5V21h-4v-5.8c0-1.4-.03-3.2-1.95-3.2-1.95 0-2.25 1.5-2.25 3.1V21H9z"/></svg>LinkedIn</a>
+  </section>
 
-<header class="hero" id="top">
-  <div class="wrap hero-grid">
-    <div>
-      <p class="eyebrow">Darien, CT · Survivor · Founder · Advocate</p>
-      <h1 id="name" aria-label="Brynn Forlizzi"><span class="w">Brynn</span> <em class="w">Forlizzi</em></h1>
-      <p class="bio">Two-time pediatric cancer survivor, co-founder of <b>Soothe Note</b>, founder of <b>Cards of Courage</b>, four-year student government president, and varsity athlete, with a strong interest in <b>policy, politics, finance, and philanthropy</b>.</p>
-      <div class="cta">
-        <a class="btn dark" href="#impact">See my work <span aria-hidden="true">↓</span></a>
-        <a class="btn ghost" href="https://www.bedfordnewcanaanmag.com/blog-posts/18-under-18-2026" target="_blank" rel="noopener">Read my 18 Under 18 feature</a>
-      </div>
-      <div class="facts">
-        <div><b data-to="15000" data-pre="$" data-post="+">$0</b><span>raised for pediatric cancer</span></div>
-        <div><b data-to="110" data-post="+">0</b><span>outlets covered Soothe Note</span></div>
-        <div><b>4.2</b><span>weighted GPA</span></div>
-        <div><b data-to="4">0</b><span>years student gov president</span></div>
+  <section class="book" aria-label="Accomplishments" aria-roledescription="carousel">
+    <div class="top"><span>Accomplishments</span><div class="count" id="count"></div></div>
+    <article class="page" id="page" aria-live="polite"></article>
+    <div class="nav">
+      <div class="dots" id="dots"></div>
+      <div class="arrows">
+        <button class="arrow" id="prev" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+        <button class="arrow" id="next" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 5l7 7-7 7"/></svg></button>
       </div>
     </div>
-    <div class="stage" aria-hidden="true">
-      <div class="badge"><svg viewBox="0 0 150 150"><defs><path id="circ" d="M75,75 m-58,0 a58,58 0 1,1 116,0 a58,58 0 1,1 -116,0"/></defs><text><textPath href="#circ">survivor • founder • advocate • </textPath></text></svg><div class="heart">♥</div></div>
-      <div class="ring" id="ring"></div>
-    </div>
-  </div>
-</header>
+  </section>
 
-<div class="marquee" aria-hidden="true"><div id="marq"></div></div>
-
-<section id="impact" class="work">
-  <div class="wrap">
-    <div class="head-row reveal">
-      <div><p class="eyebrow">Accomplishments</p><h2>What I've <em>built.</em></h2></div>
-      <p>Click through, or use your arrow keys.</p>
-    </div>
-    <div class="board reveal" id="board">
-      <ul class="tabs" id="tabs" role="tablist"></ul>
-      <div class="panel" id="panel" aria-live="polite">
-        <div class="controls">
-          <button class="arrow" id="prev" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M15 5l-7 7 7 7"/></svg></button>
-          <button class="arrow" id="next" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 5l7 7-7 7"/></svg></button>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="story">
-  <div class="wrap story">
-    <div class="reveal">
-      <p class="eyebrow">My story</p>
-      <h2>Beating cancer, <em>twice.</em></h2>
-      <p>I'm Brynn, a student at <strong>Greenwich Country Day School</strong> from Darien, CT, and a <strong>two-time pediatric cancer survivor</strong>.</p>
-      <p>I know what the long days in a hospital room feel like. Now I spend my time making them easier for other kids: through handwritten cards, fundraising, speaking at galas, and building technology that keeps patients and families connected.</p>
-      <blockquote class="quote">“I want to do everything I can to make the experience easier for the next patient.”</blockquote>
-    </div>
-    <div class="collage reveal">
-      <img src="brynn.jpg" alt="Brynn Forlizzi smiling at an outdoor table" loading="lazy">
-      <img src="cycle.jpg" alt="Brynn at a Cycle for Survival ride" loading="lazy">
-    </div>
-  </div>
-</section>
-
-<section class="moments" aria-label="Moments">
-  <div class="wrap">
-    <div class="head-row reveal">
-      <div><p class="eyebrow">Moments</p><h2>Along the <em>way.</em></h2></div>
-      <div class="strip-nav">
-        <button class="arrow" id="sPrev" aria-label="Scroll photos left"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M15 5l-7 7 7 7"/></svg></button>
-        <button class="arrow" id="sNext" aria-label="Scroll photos right"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 5l7 7-7 7"/></svg></button>
-      </div>
-    </div>
-    <div class="strip" id="strip"></div>
-  </div>
-</section>
-
-<section id="press" style="padding-top:0">
-  <div class="wrap">
-    <div class="reveal"><p class="eyebrow">Press</p><h2>In the <em>news.</em></h2></div>
-    <div class="cards reveal">
-      <a class="c" href="https://www.bedfordnewcanaanmag.com/blog-posts/18-under-18-2026" target="_blank" rel="noopener">
-        <span class="k">Bedford &amp; New Canaan Magazine · 2026</span>
-        <h3>18 Under 18</h3>
-        <p>Named one of the area's 18 most inspiring young people.</p>
-        <span class="go">Read the article →</span>
-      </a>
-      <a class="c" href="https://soothenote.com" target="_blank" rel="noopener">
-        <span class="k">Soothe Note</span>
-        <h3>Featured by 110+ outlets</h3>
-        <p>National media coverage of the free cancer-care app Brynn co-founded.</p>
-        <span class="go">Visit soothenote.com →</span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <div class="reveal"><p class="eyebrow">More about me</p><h2>Also <em>me.</em></h2></div>
-    <div class="cards three reveal">
-      <div class="c"><span class="k">Leadership</span><h3>Student Government President</h3><p>Four years</p></div>
-      <div class="c"><span class="k">Sports</span><h3>Varsity Tennis Captain</h3><p>Greenwich Country Day School</p></div>
-      <div class="c"><span class="k">School</span><h3>4.2 Weighted GPA</h3><p>Greenwich Country Day School</p></div>
-      <div class="c"><span class="k">Riding</span><h3>Competitive Equestrian</h3><p>Horseback riding</p></div>
-      <div class="c"><span class="k">Honor</span><h3>NYCFC Kickoff Kid</h3><p>Kick Childhood Cancer campaign</p></div>
-      <div class="c"><span class="k">Speaking</span><h3>Gala Speaker</h3><p>Audiences of 500+</p></div>
-    </div>
-    <p class="interests-line reveal">Interested in <b>policy, politics, finance, philanthropy</b> and <b>health tech</b>.</p>
-  </div>
-</section>
-
-<footer>
-  <h2>Brynn <em>Forlizzi</em></h2>
-  <p>For the next patient. Always.</p>
-  <div class="cta">
-    <a class="btn dark" href="https://www.linkedin.com/in/brynn-forlizzi-3929aa205/" target="_blank" rel="noopener me"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C20.6 8.65 21 11.2 21 14.5V21h-4v-5.8c0-1.4-.03-3.2-1.95-3.2-1.95 0-2.25 1.5-2.25 3.1V21H9z"/></svg>Connect on LinkedIn</a>
-  </div>
-  <p class="fine">© <span id="yr"></span> Brynn Forlizzi</p>
-  <p class="made">made by Zylos</p>
-</footer>
+  <p class="made">© <span id="yr"></span> Brynn Forlizzi · made by Zylos</p>
+</main>
 
 <script>
-const drive = (id, w) => `https://lh3.googleusercontent.com/d/${id}=w${w}`;
 const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 // name trickles in and out
@@ -354,116 +135,58 @@ function nameOut() {
 }
 if (still) chars.forEach(c => c.style.opacity = 1); else nameIn();
 
-// photo ring
-const ringSrc = ["brynn.jpg","cycle.jpg",drive("1z1Cjp7guKWZ4mtl5h0kVZv__zlmpnSE7",500),"darien.jpg",drive("1rEeXG89jTwEsXPBpEsGdF74ejpUlu7si",500),drive("1rbSasmLgrps0jVO8awP3ouTl0ziRPeau",500),drive("1oZPheqViirPmCnK9hdDwRE47EpjbsQOO",500),drive("1tOaEf6fbwU5SGwQZpY73xrV27QMbCu_g",500)];
-const ring = document.getElementById("ring");
-ringSrc.forEach((src, i) => {
-  const f = document.createElement("figure");
-  f.style.transform = `rotateY(${i * 360 / ringSrc.length}deg) translateZ(var(--r))`;
-  f.innerHTML = `<img src="${src}" alt="" loading="${i < 4 ? "eager" : "lazy"}">`;
-  ring.appendChild(f);
-});
-
-// marquee
-const words = ["Soothe Note","Cards of Courage","Hope & Heroes","Cycle for Survival","18 Under 18","Two-time survivor"];
-document.getElementById("marq").innerHTML = [...words, ...words].map(w => `<span>${w}</span><span>✦</span>`).join("");
-
-// accomplishments
+// catalogue
 const items = [
-  { tag:"Health tech", role:"Co-Founder", title:"Soothe Note", years:"Launched March 2026",
-    lead:"A free cancer-care app born from our firsthand experiences as patient and caregiver.",
-    points:["Co-founded Soothe Note with Teddy Aaron, turning our experiences as patient and caregiver into a free app used by thousands of patients and caregivers","Helps users manage symptoms, medications, appointments, treatment schedules, and questions between visits, with doctor-ready summaries and private caregiver views","Integrates trusted FDA and National Library of Medicine data for medication info, drug recalls and shortages, and cancer-specific symptom education","Grant-funded and guided by a seven-person clinical and patient-advocacy board spanning Yale Medicine, Smilow Cancer Hospital, and UAB"],
-    big:"110+", bigLabel:"media outlets featured Soothe Note", link:"https://soothenote.com", linkText:"Visit soothenote.com" },
-  { tag:"Nonprofit", role:"Founder & President", title:"Cards of Courage", years:"2024 – Present",
-    lead:"Handwritten cards for kids fighting cancer, and a community behind them.",
-    points:["Founded a nonprofit supporting pediatric cancer patients through handwritten cards and community outreach","Coordinate volunteers and organize initiatives to expand impact and engagement"],
-    big:"$15,000+", bigLabel:"raised for pediatric cancer" },
-  { tag:"Ambassador", role:"Patient Ambassador", title:"Hope & Heroes", years:"2024 – Present",
-    lead:"Using my story to raise awareness and funds for pediatric cancer.",
-    points:["Organize and execute fundraising initiatives for pediatric cancer awareness","Share personal experiences in campaigns about the effects of pediatric cancer","Speak at gala events to motivate fundraising"],
-    big:"500+", bigLabel:"gala attendees addressed" },
-  { tag:"Advocacy", role:"Patient Advocate", title:"Cycle for Survival", years:"Memorial Sloan Kettering",
-    lead:"Rallying riders and donors behind rare-cancer research.",
-    points:["Patient advocate for Cycle for Survival, the movement funding research on rare cancers","Share my story to rally riders, teams, and donors behind the cause"] },
-  { tag:"Leadership", role:"President", title:"Student Government", years:"Four years",
-    lead:"Four-year student government president.",
-    points:["Elected to lead student government for four consecutive years","Captain of the varsity tennis team"],
-    big:"4.2", bigLabel:"weighted GPA" },
-  { tag:"Award", role:"Honoree · 2026", title:"18 Under 18", years:"Bedford & New Canaan Magazine",
-    lead:"Named one of the area's 18 most inspiring young people.",
-    points:["Recognized for turning two cancer battles into advocacy, fundraising, and health tech","Also honored by NYCFC as its Community Kickoff Kid during the Kick Childhood Cancer campaign"],
-    link:"https://www.bedfordnewcanaanmag.com/blog-posts/18-under-18-2026", linkText:"Read the feature" }
+  { tag:"Health tech", title:"Soothe Note", role:"Co-Founder · 2026",
+    desc:"Co-founded a free cancer-care app with Teddy Aaron, built from our experiences as patient and caregiver. It helps patients manage symptoms, medications, and appointments, and is guided by a clinical board spanning Yale Medicine, Smilow Cancer Hospital, and UAB.",
+    big:"110+", label:"media outlets", link:"https://soothenote.com", linkText:"soothenote.com →" },
+  { tag:"Nonprofit", title:"Cards of Courage", role:"Founder & President · 2024 – Present",
+    desc:"Founded a nonprofit supporting pediatric cancer patients through handwritten cards and community outreach. Coordinate volunteers and lead initiatives to grow its impact.",
+    big:"$15,000+", label:"raised for pediatric cancer" },
+  { tag:"Ambassador", title:"Hope & Heroes", role:"Patient Ambassador · 2024 – Present",
+    desc:"Organize fundraising initiatives and share my story to raise awareness of pediatric cancer, including speaking at gala events.",
+    big:"500+", label:"gala attendees addressed" },
+  { tag:"Advocacy", title:"Cycle for Survival", role:"Patient Advocate",
+    desc:"Patient advocate for Cycle for Survival, Memorial Sloan Kettering's movement funding research on rare cancers." },
+  { tag:"Award", title:"18 Under 18", role:"Bedford & New Canaan Magazine · 2026",
+    desc:"Named one of the area's 18 most inspiring young people for turning two cancer battles into advocacy, fundraising, and health tech.",
+    link:"https://www.bedfordnewcanaanmag.com/blog-posts/18-under-18-2026", linkText:"Read the article →" },
+  { tag:"Leadership", title:"Student Government President", role:"Four years",
+    desc:"Elected to lead student government for four consecutive years.",
+    big:"4", label:"years as president" },
+  { tag:"Honor", title:"NYCFC Kickoff Kid", role:"New York City FC",
+    desc:"Honored as NYCFC's Community Kickoff Kid during its Kick Childhood Cancer campaign." }
 ];
-const DUR = 8000;
-const board = document.getElementById("board"), tabs = document.getElementById("tabs"), panel = document.getElementById("panel");
-board.style.setProperty("--dur", DUR + "ms");
+const page = document.getElementById("page"), dots = document.getElementById("dots"), count = document.getElementById("count");
 const pad = n => String(n).padStart(2, "0");
-items.forEach((it, i) => {
-  const li = document.createElement("li");
-  li.innerHTML = `<button role="tab"><span class="n">${pad(i+1)}</span><span class="t">${it.title}<span class="r">${it.role}</span></span><i class="bar"></i></button>`;
-  li.firstChild.onclick = () => go(i);
-  tabs.appendChild(li);
-  const p = document.createElement("article");
-  p.className = "pane";
-  p.innerHTML = `<div class="meta"><span class="pill">${it.tag}</span><span class="when">${it.years}</span></div>
-    <h3>${it.title}</h3><p class="role">${it.role}</p><p class="lead">${it.lead}</p>
-    <ul>${it.points.map(x => `<li>${x}</li>`).join("")}</ul>
-    <div class="foot">${it.big ? `<div class="stat2"><b>${it.big}</b><span>${it.bigLabel}</span></div>` : ""}
-    ${it.link ? `<a class="btn dark" href="${it.link}" target="_blank" rel="noopener">${it.linkText} →</a>` : ""}</div>`;
-  panel.appendChild(p);
-});
-let cur = 0, timer, seen = false;
-function go(i) {
+items.forEach((it, i) => { const b = document.createElement("button"); b.setAttribute("aria-label", it.title); b.onclick = () => go(i); dots.appendChild(b); });
+let cur = 0, busy = false;
+function render() {
+  const it = items[cur];
+  page.innerHTML = `<span class="tag">${it.tag}</span><h2>${it.title}</h2><p class="role">${it.role}</p><p class="desc">${it.desc}</p>
+    <div class="stat">${it.big ? `<b>${it.big}</b><span>${it.label}</span>` : ""}${it.link ? `<a href="${it.link}" target="_blank" rel="noopener">${it.linkText}</a>` : ""}</div>`;
+  count.innerHTML = `<b>${pad(cur + 1)}</b> / ${pad(items.length)}`;
+  [...dots.children].forEach((d, j) => d.classList.toggle("on", j === cur));
+}
+async function go(i) {
+  if (busy || i === cur) return;
+  const dir = i > cur ? 1 : -1;
   cur = (i + items.length) % items.length;
-  [...tabs.children].forEach((li, j) => { const b = li.firstChild; b.classList.toggle("on", j === cur); b.setAttribute("aria-selected", j === cur); const bar = b.querySelector(".bar"); bar.style.animation = "none"; bar.offsetWidth; bar.style.animation = ""; });
-  [...panel.querySelectorAll(".pane")].forEach((p, j) => p.classList.toggle("on", j === cur));
-  const t = tabs.children[cur]; if (innerWidth <= 900 && seen) tabs.scrollTo({ left: t.offsetLeft - 16, behavior: "smooth" });
-  clearTimeout(timer); timer = setTimeout(tick, DUR);
+  if (still) return render();
+  busy = true;
+  await page.animate([{transform:"none",opacity:1},{transform:`rotateY(${-dir*80}deg)`,opacity:0}],{duration:280,easing:"cubic-bezier(.6,0,.8,.4)"}).finished;
+  render();
+  await page.animate([{transform:`rotateY(${dir*80}deg)`,opacity:0},{transform:"none",opacity:1}],{duration:420,easing:"cubic-bezier(.2,.8,.2,1)"}).finished;
+  busy = false;
 }
-function tick() { if (board.classList.contains("paused") || !seen) { timer = setTimeout(tick, 400); return; } go(cur + 1); }
-board.addEventListener("mouseenter", () => board.classList.add("paused"));
-board.addEventListener("mouseleave", () => board.classList.remove("paused"));
-new IntersectionObserver(es => { seen = es[0].isIntersecting; }, { threshold: .3 }).observe(board);
-document.getElementById("prev").onclick = () => go(cur - 1);
-document.getElementById("next").onclick = () => go(cur + 1);
-document.addEventListener("keydown", e => { if (!seen) return; if (e.key === "ArrowRight") go(cur + 1); if (e.key === "ArrowLeft") go(cur - 1); });
+const step = d => go((cur + d + items.length) % items.length);
+document.getElementById("prev").onclick = () => step(-1);
+document.getElementById("next").onclick = () => step(1);
+document.addEventListener("keydown", e => { if (e.key === "ArrowRight") step(1); if (e.key === "ArrowLeft") step(-1); });
 let sx = null;
-panel.addEventListener("touchstart", e => sx = e.touches[0].clientX, { passive: true });
-panel.addEventListener("touchend", e => { if (sx === null) return; const dx = e.changedTouches[0].clientX - sx; if (Math.abs(dx) > 45) go(cur + (dx < 0 ? 1 : -1)); sx = null; });
-go(0);
-
-// moments strip
-const moments = [
-  ["darien.jpg","Growing up","Darien, CT"],
-  ["cycle.jpg","Cycle for Survival","Riding for rare-cancer research"],
-  ["brynn.jpg","Today","Survivor, founder, advocate"],
-  [drive("1rEeXG89jTwEsXPBpEsGdF74ejpUlu7si",700),"Thumbs up","Through treatment"],
-  [drive("1z1Cjp7guKWZ4mtl5h0kVZv__zlmpnSE7",700),"Never alone","Friends by my side"],
-  [drive("1oZPheqViirPmCnK9hdDwRE47EpjbsQOO",700),"Hospital days","Where it all started"],
-  [drive("1rbSasmLgrps0jVO8awP3ouTl0ziRPeau",700),"Long days","The reason I build"]
-];
-const strip = document.getElementById("strip");
-strip.innerHTML = moments.map(([src, t, c]) => `<figure><div class="ph"><img src="${src}" alt="${t}" loading="lazy"></div><figcaption><b>${t}</b>${c}</figcaption></figure>`).join("");
-const stepBy = d => strip.scrollBy({ left: d * (strip.querySelector("figure").offsetWidth + 18), behavior: "smooth" });
-document.getElementById("sPrev").onclick = () => stepBy(-1);
-document.getElementById("sNext").onclick = () => stepBy(1);
-let drag = null;
-strip.addEventListener("pointerdown", e => { if (e.pointerType !== "mouse") return; drag = { x: e.clientX, l: strip.scrollLeft }; strip.style.scrollSnapType = "none"; });
-addEventListener("pointermove", e => { if (drag) strip.scrollLeft = drag.l - (e.clientX - drag.x); });
-addEventListener("pointerup", () => { if (drag) { drag = null; strip.style.scrollSnapType = ""; } });
-
-// reveal + counters
-function countUp(el) {
-  const to = +el.dataset.to, pre = el.dataset.pre || "", post = el.dataset.post || "", t0 = performance.now();
-  const step = t => { const p = Math.min(1, (t - t0) / 1600), v = Math.round(to * (1 - Math.pow(1 - p, 3))); el.textContent = pre + v.toLocaleString() + (p === 1 ? post : ""); if (p < 1) requestAnimationFrame(step); };
-  requestAnimationFrame(step);
-}
-document.querySelectorAll("[data-to]").forEach(el => setTimeout(() => countUp(el), 600));
-const io = new IntersectionObserver(es => es.forEach(e => { if (!e.isIntersecting) return; e.target.classList.add("in"); io.unobserve(e.target); }), { threshold: .15 });
-document.querySelectorAll(".reveal").forEach(el => io.observe(el));
-
-const nav = document.getElementById("nav"), prog = document.getElementById("progress");
-addEventListener("scroll", () => { nav.classList.toggle("scrolled", scrollY > 20); prog.style.transform = `scaleX(${scrollY / (document.documentElement.scrollHeight - innerHeight)})`; }, { passive: true });
+page.addEventListener("touchstart", e => sx = e.touches[0].clientX, { passive: true });
+page.addEventListener("touchend", e => { if (sx === null) return; const dx = e.changedTouches[0].clientX - sx; if (Math.abs(dx) > 45) step(dx < 0 ? 1 : -1); sx = null; });
+render();
 document.getElementById("yr").textContent = new Date().getFullYear();
 </script>
 </body>
