@@ -48,7 +48,7 @@ body{background:#fff;color:var(--ink);font-family:var(--sans);line-height:1.6;-w
 body::before{content:"";position:fixed;width:900px;height:900px;border-radius:50%;background:radial-gradient(circle,var(--blush),transparent 62%);top:-320px;left:-260px;z-index:-1}
 a{color:inherit}
 ::selection{background:var(--pink);color:#fff}
-main{max-width:1180px;margin:0 auto;min-height:100svh;padding:clamp(32px,6vh,64px) clamp(16px,5vw,56px);display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(36px,6vw,90px);align-items:center}
+main{max-width:1180px;margin:0 auto;min-height:100svh;padding:clamp(32px,6vh,64px) clamp(16px,5vw,56px);display:grid;grid-template-columns:.78fr 1.22fr;gap:clamp(36px,5vw,72px);align-items:center}
 
 /* intro */
 .photo{width:96px;height:96px;border-radius:50%;object-fit:cover;object-position:62% 40%;border:4px solid #fff;box-shadow:0 14px 30px -14px rgba(255,61,127,.6)}
@@ -63,18 +63,32 @@ h1 .ch{display:inline-block;opacity:0;will-change:transform,opacity,filter}
 .btn:hover{background:var(--pink);transform:translateY(-2px)}
 .btn svg{width:15px;height:15px}
 
+/* photo fan */
+.fan{display:flex;margin-top:34px;height:150px;align-items:flex-end;padding-left:8px}
+.fan img{width:104px;height:136px;object-fit:cover;border-radius:12px;border:4px solid #fff;box-shadow:0 14px 30px -16px rgba(29,20,24,.45);margin-left:-26px;transition:transform .45s cubic-bezier(.2,.8,.2,1),margin .45s cubic-bezier(.2,.8,.2,1);cursor:pointer}
+.fan img:first-child{margin-left:0}
+.fan img:nth-child(odd){transform:rotate(-6deg)} .fan img:nth-child(even){transform:rotate(5deg) translateY(-6px)}
+.fan:hover img{margin-left:8px}
+.fan:hover img:first-child{margin-left:0}
+.fan img:hover{transform:rotate(0) translateY(-14px) scale(1.06);z-index:2}
+.lightbox{position:fixed;inset:0;background:rgba(29,20,24,.82);display:grid;place-items:center;z-index:100;opacity:0;pointer-events:none;transition:opacity .3s;padding:20px;cursor:zoom-out}
+.lightbox.on{opacity:1;pointer-events:auto}
+.lightbox img{max-width:min(92vw,900px);max-height:86vh;border-radius:16px;border:5px solid #fff}
 /* catalogue */
 .book{perspective:1600px}
 .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
 .top span{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--pink);font-weight:600}
 .count{font-family:var(--serif);font-size:18px;color:var(--muted)}
 .count b{color:var(--ink);font-weight:400}
-.page{background:#fff;border:1px solid var(--line);border-radius:26px;padding:clamp(28px,4vw,48px);min-height:430px;display:flex;flex-direction:column;box-shadow:0 40px 80px -50px rgba(255,61,127,.55);transform-origin:left center;touch-action:pan-y;position:relative;overflow:hidden}
+.page{background:#fff;border:1px solid var(--line);border-radius:26px;padding:0;min-height:460px;display:grid;grid-template-columns:42% 1fr;box-shadow:0 40px 80px -50px rgba(255,61,127,.55);transform-origin:left center;touch-action:pan-y;position:relative;overflow:hidden}
 .page::after{content:"";position:absolute;right:-120px;top:-120px;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(255,61,127,.1),transparent 70%)}
+.pic{position:relative;overflow:hidden;background:var(--blush)}
+.pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.txt{padding:clamp(26px,3.4vw,42px);display:flex;flex-direction:column;position:relative;z-index:1}
 .tag{align-self:flex-start;background:var(--blush);color:var(--pink);font-size:11.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;padding:7px 13px;border-radius:99px}
-.page h2{font-family:var(--serif);font-weight:400;font-size:clamp(36px,4.4vw,56px);line-height:1;letter-spacing:-.02em;margin-top:20px}
+.page h2{font-family:var(--serif);font-weight:400;font-size:clamp(32px,3.4vw,46px);line-height:1;letter-spacing:-.02em;margin-top:20px}
 .role{color:var(--muted);font-size:14px;margin-top:8px}
-.desc{margin-top:20px;font-size:16.5px;color:#4a3d43;max-width:540px}
+.desc{margin-top:16px;font-size:15.5px;color:#4a3d43;max-width:540px}
 .stat{margin-top:auto;padding-top:26px;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
 .stat b{font-family:var(--serif);font-weight:600;font-size:clamp(44px,5vw,64px);line-height:1;background:linear-gradient(120deg,var(--pink),var(--pink-2));-webkit-background-clip:text;background-clip:text;color:transparent}
 .stat span{color:var(--muted);font-size:14px}
@@ -90,7 +104,7 @@ h1 .ch{display:inline-block;opacity:0;will-change:transform,opacity,filter}
 .dots button.on{width:28px;background:var(--pink)}
 .made{grid-column:1/-1;text-align:center;font-size:11.5px;color:var(--muted);letter-spacing:.04em;opacity:.8}
 
-@media(max-width:880px){main{grid-template-columns:1fr;align-items:start;gap:40px}.page{min-height:400px}}
+@media(max-width:880px){main{grid-template-columns:1fr;align-items:start;gap:40px}.page{grid-template-columns:1fr;min-height:0}.pic{aspect-ratio:4/3}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
@@ -102,6 +116,7 @@ h1 .ch{display:inline-block;opacity:0;will-change:transform,opacity,filter}
     <h1 id="name" aria-label="Brynn Forlizzi"><span class="w">Brynn</span> <em class="w">Forlizzi</em></h1>
     <p class="bio">Two-time pediatric cancer survivor and co-founder of <b>Soothe Note</b>. Four-year student government president, varsity tennis captain, and competitive equestrian with a <b>4.2 weighted GPA</b>. Interested in policy, politics, finance, and philanthropy.</p>
     <a class="btn" href="https://www.linkedin.com/in/brynn-forlizzi-3929aa205/" target="_blank" rel="noopener me"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C20.6 8.65 21 11.2 21 14.5V21h-4v-5.8c0-1.4-.03-3.2-1.95-3.2-1.95 0-2.25 1.5-2.25 3.1V21H9z"/></svg>LinkedIn</a>
+    <div class="fan" id="fan"><img src="brynn.jpg" alt="Brynn" loading="lazy"><img src="cycle.jpg" alt="Cycle for Survival" loading="lazy"><img src="darien.jpg" alt="Growing up in Darien" loading="lazy"><img src="https://lh3.googleusercontent.com/d/1z1Cjp7guKWZ4mtl5h0kVZv__zlmpnSE7=w900" alt="With a friend during treatment" loading="lazy"><img src="https://lh3.googleusercontent.com/d/1rEeXG89jTwEsXPBpEsGdF74ejpUlu7si=w900" alt="Thumbs up through treatment" loading="lazy"></div>
   </section>
 
   <section class="book" aria-label="Accomplishments" aria-roledescription="carousel">
@@ -116,6 +131,7 @@ h1 .ch{display:inline-block;opacity:0;will-change:transform,opacity,filter}
     </div>
   </section>
 
+  <div class="lightbox" id="lb"><img alt=""></div>
   <p class="made">© <span id="yr"></span> Brynn Forlizzi · made by Zylos</p>
 </main>
 
@@ -137,24 +153,24 @@ if (still) chars.forEach(c => c.style.opacity = 1); else nameIn();
 
 // catalogue
 const items = [
-  { tag:"Health tech", title:"Soothe Note", role:"Co-Founder · 2026",
+  { tag:"Health tech", title:"Soothe Note", photo:"brynn.jpg", role:"Co-Founder · 2026",
     desc:"Co-founded a free cancer-care app with Teddy Aaron, built from our experiences as patient and caregiver. It helps patients manage symptoms, medications, and appointments, and is guided by a clinical board spanning Yale Medicine, Smilow Cancer Hospital, and UAB.",
     big:"110+", label:"media outlets", link:"https://soothenote.com", linkText:"soothenote.com →" },
-  { tag:"Nonprofit", title:"Cards of Courage", role:"Founder & President · 2024 – Present",
+  { tag:"Nonprofit", title:"Cards of Courage", photo:"https://lh3.googleusercontent.com/d/1z1Cjp7guKWZ4mtl5h0kVZv__zlmpnSE7=w900", role:"Founder & President · 2024 – Present",
     desc:"Founded a nonprofit supporting pediatric cancer patients through handwritten cards and community outreach. Coordinate volunteers and lead initiatives to grow its impact.",
     big:"$15,000+", label:"raised for pediatric cancer" },
-  { tag:"Ambassador", title:"Hope & Heroes", role:"Patient Ambassador · 2024 – Present",
+  { tag:"Ambassador", title:"Hope & Heroes", photo:"https://lh3.googleusercontent.com/d/1rEeXG89jTwEsXPBpEsGdF74ejpUlu7si=w900", role:"Patient Ambassador · 2024 – Present",
     desc:"Organize fundraising initiatives and share my story to raise awareness of pediatric cancer, including speaking at gala events.",
     big:"500+", label:"gala attendees addressed" },
-  { tag:"Advocacy", title:"Cycle for Survival", role:"Patient Advocate",
+  { tag:"Advocacy", title:"Cycle for Survival", photo:"cycle.jpg", role:"Patient Advocate",
     desc:"Patient advocate for Cycle for Survival, Memorial Sloan Kettering's movement funding research on rare cancers." },
-  { tag:"Award", title:"18 Under 18", role:"Bedford & New Canaan Magazine · 2026",
+  { tag:"Award", title:"18 Under 18", photo:"darien.jpg", role:"Bedford & New Canaan Magazine · 2026",
     desc:"Named one of the area's 18 most inspiring young people for turning two cancer battles into advocacy, fundraising, and health tech.",
     link:"https://www.bedfordnewcanaanmag.com/blog-posts/18-under-18-2026", linkText:"Read the article →" },
-  { tag:"Leadership", title:"Student Government President", role:"Four years",
+  { tag:"Leadership", title:"Student Government President", photo:"https://lh3.googleusercontent.com/d/1oZPheqViirPmCnK9hdDwRE47EpjbsQOO=w900", role:"Four years",
     desc:"Elected to lead student government for four consecutive years.",
     big:"4", label:"years as president" },
-  { tag:"Honor", title:"NYCFC Kickoff Kid", role:"New York City FC",
+  { tag:"Honor", title:"NYCFC Kickoff Kid", photo:"https://lh3.googleusercontent.com/d/1rbSasmLgrps0jVO8awP3ouTl0ziRPeau=w900", role:"New York City FC",
     desc:"Honored as NYCFC's Community Kickoff Kid during its Kick Childhood Cancer campaign." }
 ];
 const page = document.getElementById("page"), dots = document.getElementById("dots"), count = document.getElementById("count");
@@ -163,8 +179,8 @@ items.forEach((it, i) => { const b = document.createElement("button"); b.setAttr
 let cur = 0, busy = false;
 function render() {
   const it = items[cur];
-  page.innerHTML = `<span class="tag">${it.tag}</span><h2>${it.title}</h2><p class="role">${it.role}</p><p class="desc">${it.desc}</p>
-    <div class="stat">${it.big ? `<b>${it.big}</b><span>${it.label}</span>` : ""}${it.link ? `<a href="${it.link}" target="_blank" rel="noopener">${it.linkText}</a>` : ""}</div>`;
+  page.innerHTML = `<div class="pic"><img src="${it.photo}" alt="${it.title}"></div><div class="txt"><span class="tag">${it.tag}</span><h2>${it.title}</h2><p class="role">${it.role}</p><p class="desc">${it.desc}</p>
+    <div class="stat">${it.big ? `<b>${it.big}</b><span>${it.label}</span>` : ""}${it.link ? `<a href="${it.link}" target="_blank" rel="noopener">${it.linkText}</a>` : ""}</div></div>`;
   count.innerHTML = `<b>${pad(cur + 1)}</b> / ${pad(items.length)}`;
   [...dots.children].forEach((d, j) => d.classList.toggle("on", j === cur));
 }
@@ -187,6 +203,11 @@ let sx = null;
 page.addEventListener("touchstart", e => sx = e.touches[0].clientX, { passive: true });
 page.addEventListener("touchend", e => { if (sx === null) return; const dx = e.changedTouches[0].clientX - sx; if (Math.abs(dx) > 45) step(dx < 0 ? 1 : -1); sx = null; });
 render();
+items.forEach(it => { const im = new Image(); im.src = it.photo; });
+const lb = document.getElementById("lb");
+document.querySelectorAll("#fan img").forEach(im => im.onclick = () => { lb.firstChild.src = im.src; lb.classList.add("on"); });
+lb.onclick = () => lb.classList.remove("on");
+document.addEventListener("keydown", e => { if (e.key === "Escape") lb.classList.remove("on"); });
 document.getElementById("yr").textContent = new Date().getFullYear();
 </script>
 </body>
