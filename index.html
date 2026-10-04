@@ -3,8 +3,41 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Brynn Forlizzi</title>
-<meta name="description" content="Brynn Forlizzi — two-time cancer survivor, founder of Cards of Courage, Hope & Heroes ambassador, and co-founder of Soothe Note.">
+<title>Brynn Forlizzi | Pediatric Cancer Survivor, Advocate &amp; Co-Founder of Soothe Note</title>
+<meta name="description" content="Brynn Forlizzi is a two-time pediatric cancer survivor from Darien, CT, co-founder of the free cancer-care app Soothe Note, founder of Cards of Courage, Hope &amp; Heroes Patient Ambassador, and a 2026 18 Under 18 honoree.">
+<meta name="author" content="Brynn Forlizzi">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://codebytaaron.github.io/brynnforlizzi/">
+<meta name="theme-color" content="#ff3d7f">
+<meta property="og:type" content="profile">
+<meta property="og:site_name" content="Brynn Forlizzi">
+<meta property="og:title" content="Brynn Forlizzi | Survivor, Founder, Advocate">
+<meta property="og:description" content="Two-time pediatric cancer survivor, co-founder of Soothe Note, founder of Cards of Courage and Hope &amp; Heroes Patient Ambassador.">
+<meta property="og:url" content="https://codebytaaron.github.io/brynnforlizzi/">
+<meta property="og:image" content="https://codebytaaron.github.io/brynnforlizzi/brynn.jpg">
+<meta property="og:image:width" content="800"><meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="Portrait of Brynn Forlizzi">
+<meta property="profile:first_name" content="Brynn"><meta property="profile:last_name" content="Forlizzi">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Brynn Forlizzi | Survivor, Founder, Advocate">
+<meta name="twitter:description" content="Two-time pediatric cancer survivor and co-founder of Soothe Note.">
+<meta name="twitter:image" content="https://codebytaaron.github.io/brynnforlizzi/brynn.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2290%22 fill=%22%23ff3d7f%22%3E%E2%99%A5%3C/text%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="brynn.jpg">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"ProfilePage","@id":"https://codebytaaron.github.io/brynnforlizzi/#page","url":"https://codebytaaron.github.io/brynnforlizzi/","name":"Brynn Forlizzi","mainEntity":{"@id":"https://codebytaaron.github.io/brynnforlizzi/#brynn"}},
+ {"@type":"Person","@id":"https://codebytaaron.github.io/brynnforlizzi/#brynn","name":"Brynn Forlizzi","givenName":"Brynn","familyName":"Forlizzi","url":"https://codebytaaron.github.io/brynnforlizzi/","image":"https://codebytaaron.github.io/brynnforlizzi/brynn.jpg",
+  "description":"Two-time pediatric cancer survivor, co-founder of Soothe Note, founder of Cards of Courage and Hope & Heroes Patient Ambassador.",
+  "jobTitle":"Co-Founder, Soothe Note",
+  "sameAs":["https://www.linkedin.com/in/brynn-forlizzi-3929aa205/"],
+  "address":{"@type":"PostalAddress","addressLocality":"Darien","addressRegion":"CT","addressCountry":"US"},
+  "affiliation":[{"@type":"EducationalOrganization","name":"Greenwich Country Day School"},{"@type":"Organization","name":"Hope & Heroes"},{"@type":"Organization","name":"Cycle for Survival"}],
+  "founder":[{"@type":"Organization","name":"Soothe Note","url":"https://soothenote.com"},{"@type":"Organization","name":"Cards of Courage"}],
+  "award":["Bedford & New Canaan Magazine 18 Under 18 (2026)","NYCFC Community Kickoff Kid"],
+  "knowsAbout":["Pediatric cancer advocacy","Patient advocacy","Health technology","Nonprofit fundraising"]}
+]}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -20,6 +53,8 @@ img{display:block;max-width:100%}
 a{color:inherit}
 ::selection{background:var(--pink);color:#fff}
 
+/* progress */
+.progress{position:fixed;top:0;left:0;height:3px;width:100%;background:linear-gradient(90deg,var(--pink),var(--pink-2));transform-origin:0 50%;transform:scaleX(0);z-index:60}
 /* nav */
 nav{position:fixed;inset:0 0 auto 0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:18px clamp(16px,4vw,48px);background:rgba(255,255,255,.75);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:border-color .3s}
 nav.scrolled{border-color:var(--line)}
@@ -28,6 +63,9 @@ nav.scrolled{border-color:var(--line)}
 nav ul{display:flex;gap:28px;list-style:none;font-size:14px;font-weight:500}
 nav ul a{text-decoration:none;color:var(--muted);transition:color .2s}
 nav ul a:hover{color:var(--pink)}
+nav .li{display:inline-flex;align-items:center;gap:6px;color:#fff!important;background:var(--ink);padding:8px 14px;border-radius:99px;transition:background .25s}
+nav .li:hover{background:var(--pink)}
+nav .li svg{width:14px;height:14px}
 @media(max-width:640px){nav ul{gap:16px;font-size:13px} nav ul li:first-child{display:none}}
 
 /* hero */
@@ -37,7 +75,9 @@ nav ul a:hover{color:var(--pink)}
 h1{font-family:var(--serif);font-weight:400;font-size:clamp(56px,12vw,150px);line-height:.92;letter-spacing:-.03em}
 h1 em{color:var(--pink);font-style:italic}
 h1 .w{display:inline-block;white-space:nowrap}
-h1 .ch{display:inline-block;opacity:0;transform:translateY(40px) rotate(8deg);animation:rise .9s cubic-bezier(.2,.8,.2,1) forwards}
+h1 .ch{display:inline-block;opacity:0;will-change:transform,opacity,filter;transition:color .3s}
+h1 .ch:hover{color:var(--pink)}
+h1 em .ch:hover{color:var(--ink)}
 @keyframes rise{to{opacity:1;transform:none}}
 .lede{max-width:560px;margin:22px auto 0;color:var(--muted);font-size:clamp(16px,2vw,19px)}
 
@@ -156,12 +196,14 @@ footer .made{font-size:11px;margin-top:6px;letter-spacing:.08em;opacity:.7}
 </head>
 <body>
 
+<div class="progress" id="progress" aria-hidden="true"></div>
 <nav id="nav">
   <a class="logo" href="#top">Brynn<span>.</span></a>
   <ul>
     <li><a href="#story">Story</a></li>
     <li><a href="#impact">Impact</a></li>
     <li><a href="#beyond">Beyond</a></li>
+    <li><a class="li" href="https://www.linkedin.com/in/brynn-forlizzi-3929aa205/" target="_blank" rel="noopener me"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C20.6 8.65 21 11.2 21 14.5V21h-4v-5.8c0-1.4-.03-3.2-1.95-3.2-1.95 0-2.25 1.5-2.25 3.1V21H9z"/></svg>LinkedIn</a></li>
   </ul>
 </nav>
 
@@ -193,12 +235,12 @@ footer .made{font-size:11px;margin-top:6px;letter-spacing:.08em;opacity:.7}
       <blockquote class="quote">“I want to do everything I can to make the experience easier for the next patient.”</blockquote>
       <div class="stats">
         <div class="stat"><b data-to="15000" data-pre="$" data-post="+">$0</b><span>raised for pediatric cancer</span></div>
-        <div class="stat"><b data-to="4000" data-post="+">0</b><span>Soothe Note users</span></div>
+        <div class="stat"><b data-to="110" data-post="+">0</b><span>outlets featured Soothe Note</span></div>
         <div class="stat"><b data-to="500" data-post="+">0</b><span>gala attendees addressed</span></div>
       </div>
     </div>
     <div class="about-photos reveal">
-      <img src="https://lh3.googleusercontent.com/d/1rEeXG89jTwEsXPBpEsGdF74ejpUlu7si=w900" alt="Brynn smiling in her hospital bed" loading="lazy">
+      <img src="brynn.jpg" alt="Brynn Forlizzi smiling at an outdoor table" loading="lazy" width="800" height="800" style="object-position:62% 40%">
       <img src="https://lh3.googleusercontent.com/d/1z1Cjp7guKWZ4mtl5h0kVZv__zlmpnSE7=w700" alt="Brynn with a friend during treatment" loading="lazy">
     </div>
   </div>
@@ -240,6 +282,7 @@ footer .made{font-size:11px;margin-top:6px;letter-spacing:.08em;opacity:.7}
 <footer>
   <h2>Brynn <em>Forlizzi</em></h2>
   <p>For the next patient. Always.</p>
+  <p style="margin-top:28px"><a class="link" href="https://www.linkedin.com/in/brynn-forlizzi-3929aa205/" target="_blank" rel="noopener me"><svg width=16 height=16 viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C20.6 8.65 21 11.2 21 14.5V21h-4v-5.8c0-1.4-.03-3.2-1.95-3.2-1.95 0-2.25 1.5-2.25 3.1V21H9z"/></svg>Connect on LinkedIn</a></p>
   <p class="fine">© <span id="yr"></span> Brynn Forlizzi</p>
   <p class="made">made by Zylos</p>
 </footer>
@@ -248,8 +291,19 @@ footer .made{font-size:11px;margin-top:6px;letter-spacing:.08em;opacity:.7}
 const img = (id, w=1200) => `https://lh3.googleusercontent.com/d/${id}=w${w}`;
 
 // hero letters
-let d = 0;
-document.querySelectorAll("#name .w").forEach(w => { w.innerHTML = [...w.textContent].map(c => `<span class="ch" style="animation-delay:${(d++)*45}ms">${c}</span>`).join(""); });
+const chars = [];
+document.querySelectorAll("#name .w").forEach(w => { w.innerHTML = [...w.textContent].map(c => `<span class="ch">${c}</span>`).join(""); chars.push(...w.querySelectorAll(".ch")); });
+const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const ease = "cubic-bezier(.2,.8,.2,1)";
+function nameIn() {
+  const a = chars.map((c, i) => c.animate([{opacity:0,transform:"translateY(.45em) rotate(8deg)",filter:"blur(10px)"},{opacity:1,transform:"none",filter:"blur(0)"}],{duration:900,delay:i*65,easing:ease,fill:"both"}));
+  a[a.length-1].finished.then(() => setTimeout(nameOut, 5200));
+}
+function nameOut() {
+  const a = chars.map((c, i) => c.animate([{opacity:1,transform:"none",filter:"blur(0)"},{opacity:0,transform:"translateY(-.4em) rotate(-6deg)",filter:"blur(10px)"}],{duration:650,delay:i*45,easing:"cubic-bezier(.6,0,.8,.4)",fill:"both"}));
+  a[a.length-1].finished.then(() => setTimeout(nameIn, 250));
+}
+if (still) chars.forEach(c => c.style.opacity = 1); else nameIn();
 
 // rotating photo ring
 const ringIds = ["1rEeXG89jTwEsXPBpEsGdF74ejpUlu7si","1z1Cjp7guKWZ4mtl5h0kVZv__zlmpnSE7","1oZPheqViirPmCnK9hdDwRE47EpjbsQOO","1rbSasmLgrps0jVO8awP3ouTl0ziRPeau","18Tgn_poqx2CUxPPAx8XgOkIOReJ7OxPR","1tOaEf6fbwU5SGwQZpY73xrV27QMbCu_g","1nIvTxQpM9pkX1ZUDGyCoCBk5GI_QzYj9","1IEUS6oi8c7Nh2AH727s-1fQTtBi9_Wk6"];
@@ -268,9 +322,10 @@ document.getElementById('marq').innerHTML = [...words, ...words].map(w => `<span
 // accomplishments
 const items = [
   { tag:"Health tech", role:"Co-Founder", title:"Soothe Note", years:"Launched March 2026",
-    lead:"A free app that keeps patients and families connected through treatment.",
-    points:["Developed a healthcare support platform improving patient and family connectivity during treatment","Conducted market research and networked with healthcare professionals and advisors for feedback and partnerships","Built targeted marketing campaigns that earned national media coverage"],
-    big:"4,000+", bigLabel:"users in 5 months" },
+    lead:"A free cancer-care app born from our firsthand experiences as patient and caregiver.",
+    points:["Co-founded Soothe Note with Teddy Aaron, turning our experiences as patient and caregiver into a free app used by thousands of patients and caregivers","Helps users manage symptoms, medications, appointments, treatment schedules, and questions between visits, with doctor-ready summaries and private caregiver views","Integrates trusted FDA and National Library of Medicine data for medication info, drug recalls and shortages, and cancer-specific symptom education","Grant-funded and guided by a seven-person clinical and patient-advocacy board spanning Yale Medicine, Smilow Cancer Hospital, and UAB"],
+    big:"110+", bigLabel:"media outlets featured Soothe Note",
+    link:"https://soothenote.com", linkText:"Visit soothenote.com" },
   { tag:"Nonprofit", role:"Founder & President", title:"Cards of Courage", years:"2024 – Present",
     lead:"Handwritten cards for kids fighting cancer, and a community behind them.",
     points:["Founded a nonprofit supporting pediatric cancer patients through handwritten cards and community outreach","Coordinate volunteers and organize initiatives to expand impact and engagement"],
@@ -337,7 +392,8 @@ function countUp(el) {
   requestAnimationFrame(step);
 }
 const nav = document.getElementById('nav');
-addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 20), { passive: true });
+const prog = document.getElementById("progress");
+addEventListener('scroll', () => { nav.classList.toggle('scrolled', scrollY > 20); prog.style.transform = `scaleX(${scrollY / (document.documentElement.scrollHeight - innerHeight)})`; }, { passive: true });
 document.getElementById('yr').textContent = new Date().getFullYear();
 </script>
 </body>
